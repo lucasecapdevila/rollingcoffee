@@ -1,9 +1,14 @@
 import './App.css'
+import BarraNavegacion from './components/common/BarraNavegacion'
+import Footer from './components/common/Footer'
+import Inicio from './components/pages/Inicio'
 
 function App() {
   return (
     <>
-      <h1>Hola mundo !</h1>
+      <BarraNavegacion />
+      <Inicio />
+      <Footer />
     </>
   )
 }
