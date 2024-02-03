@@ -1,8 +1,8 @@
 const Inicio = () => {
   return (
-    <div>
+    <main className='mainPage'>
       <p>Aquí irá el 'main' de la página principal</p>
-    </div>
+    </main>
   )
 }
 
