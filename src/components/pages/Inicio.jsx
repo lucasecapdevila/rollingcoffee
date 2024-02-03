@@ -9,6 +9,9 @@ const Inicio = () => {
       <Container className='mt-5'>
         <Row className='mx-1'>
           <CardProducto />
+          <CardProducto />
+          <CardProducto />
+          <CardProducto />
         </Row>
       </Container>
     </main>
