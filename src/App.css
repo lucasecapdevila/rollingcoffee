@@ -11,3 +11,25 @@
 .bg-green{
   background: #003c25;
 }
+
+.imgError{
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .imgError{
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .imgError{
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .imgError{
+    width: 35%;
+  }
+}

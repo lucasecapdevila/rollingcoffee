@@ -1,10 +1,12 @@
-import React from 'react'
+import { Button } from 'react-bootstrap'
+import imgError from '../../assets/error404.png'
 
 const Error404 = () => {
   return (
-    <div>
-      <p>Aquí va el maquetado de la página Error 404</p>
-    </div>
+    <main className='mainPage d-flex flex-column'>
+      <img className='d-block mx-auto imgError' src={imgError} alt="error" />
+      <Button className='align-self-center'>Volver al inicio</Button>
+    </main>
   )
 }
 
