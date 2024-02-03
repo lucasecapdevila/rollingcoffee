@@ -1,4 +1,5 @@
-import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Button, Container } from 'react-bootstrap'
 
 const Administrador = () => {
@@ -7,7 +8,7 @@ const Administrador = () => {
       <Container>
         <div className='d-flex align-items-center justify-content-between'>
           <h2 className="display-3">Productos disponibles</h2>
-          <Button className=''>asd</Button>
+          <Button className=''><FontAwesomeIcon icon={faPlus} /></Button>
         </div>
       </Container>
     </main>
