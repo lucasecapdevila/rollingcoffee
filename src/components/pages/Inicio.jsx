@@ -1,7 +1,9 @@
+import cafeteria from '../../assets/coffee-shop.jpg'
+
 const Inicio = () => {
   return (
     <main className='mainPage'>
-      <p>Aquí irá el 'main' de la página principal</p>
+      <img className='img-fluid' src={cafeteria} alt='nuestra cafetería' />
     </main>
   )
 }
