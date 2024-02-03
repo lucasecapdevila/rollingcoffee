@@ -6,8 +6,9 @@ const Inicio = () => {
   return (
     <main className='mainPage'>
       <img className='img-fluid' src={cafeteria} alt='nuestra cafetería' />
-      <Container className='mt-5'>
-        <Row className='mx-1'>
+      <Container className='mt-4'>
+      <h1 className='display-3'>Nuestros productos</h1>
+        <Row>
           <CardProducto />
           <CardProducto />
           <CardProducto />
