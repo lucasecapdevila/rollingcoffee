@@ -1,14 +1,13 @@
 import './App.css'
 import BarraNavegacion from './components/common/BarraNavegacion'
 import Footer from './components/common/Footer'
-import Error404 from './components/pages/Error404'
-import Inicio from './components/pages/Inicio'
+import Administrador from './components/pages/Administrador'
 
 function App() {
   return (
     <>
       <BarraNavegacion />
-      <Error404 />
+      <Administrador />
       <Footer />
     </>
   )

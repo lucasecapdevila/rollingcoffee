@@ -1,10 +1,13 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const Administrador = () => {
   return (
-    <div>
-      <p>Aquí va el maquetado de la página de Administración</p>
-    </div>
+    <main>
+      <Container>
+        
+      </Container>
+    </main>
   )
 }
 
