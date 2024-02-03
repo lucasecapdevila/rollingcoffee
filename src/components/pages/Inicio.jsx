@@ -7,7 +7,7 @@ const Inicio = () => {
     <main className='mainPage'>
       <img className='img-fluid' src={cafeteria} alt='nuestra cafetería' />
       <Container className='mt-5'>
-        <Row>
+        <Row className='mx-1'>
           <CardProducto />
         </Row>
       </Container>
