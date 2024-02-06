@@ -14,8 +14,8 @@ const BarraNavegacion = () => {
           <Nav className="ms-auto">
             <NavLink end className='nav-link' to="/">Inicio</NavLink>
             <NavLink end className='nav-link' to="/admin">Administrador</NavLink>
-            <NavLink end className='nav-link' to="/admin">Login</NavLink>
-            <NavLink end className='nav-link' to="/admin">Registro</NavLink>
+            <NavLink end className='nav-link' to="/login">Login</NavLink>
+            <NavLink end className='nav-link' to="/registro">Registro</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
