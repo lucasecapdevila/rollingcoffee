@@ -9,7 +9,7 @@ const Administrador = () => {
       <Container>
         <div className='d-flex align-items-center justify-content-between'>
           <h2 className="display-3">Productos disponibles</h2>
-          <Button className=''><FontAwesomeIcon icon={faPlus} /></Button>
+          <Button><FontAwesomeIcon icon={faPlus} /></Button>
         </div>
         <hr />
 
