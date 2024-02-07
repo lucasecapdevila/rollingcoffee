@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
 import producto from '../../../assets/coffee-producto.jpg'
-import { Button, Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col } from 'react-bootstrap'
+import { Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col } from 'react-bootstrap'
 
 const CardProducto = () => {
   return (
@@ -14,7 +15,7 @@ const CardProducto = () => {
           <CardText><b>Precio: $250</b></CardText>
         </CardBody>
         <CardFooter className='d-flex flex-column'>
-          <Button variant='success' className='align-self-end'>Ver más</Button>
+          <Link to='/detalle' className='btn btn-success align-self-end'>Ver más</Link>
         </CardFooter>
       </Card>
     </Col>
