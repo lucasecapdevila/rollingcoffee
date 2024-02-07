@@ -1,6 +1,6 @@
 import { Container, Row } from 'react-bootstrap'
 import cafeteria from '../../assets/coffee-shop.jpg'
-import CardProducto from '../common/CardProducto'
+import CardProducto from './producto/CardProducto'
 
 const Inicio = () => {
   return (

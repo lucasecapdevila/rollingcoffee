@@ -1,4 +1,4 @@
-import producto from '../../assets/coffee-producto.jpg'
+import producto from '../../../assets/coffee-producto.jpg'
 import { Button, Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col } from 'react-bootstrap'
 
 const CardProducto = () => {
