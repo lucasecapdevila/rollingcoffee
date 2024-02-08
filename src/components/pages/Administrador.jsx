@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { Button, Container, Table } from 'react-bootstrap'
+import { Container, Table } from 'react-bootstrap'
 import ItemProducto from './producto/ItemProducto'
+import { Link } from 'react-router-dom'
 
 const Administrador = () => {
   return (
@@ -9,7 +10,7 @@ const Administrador = () => {
       <Container>
         <div className='d-flex align-items-center justify-content-between'>
           <h1 className="display-3">Productos disponibles</h1>
-          <Button><FontAwesomeIcon icon={faPlus} /></Button>
+          <Link to='/admin/crear' className='btn btn-primary'><FontAwesomeIcon icon={faPlus} /></Link>
         </div>
         <hr />
 
