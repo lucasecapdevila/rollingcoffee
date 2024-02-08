@@ -3,8 +3,24 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Container, Table } from 'react-bootstrap'
 import ItemProducto from './producto/ItemProducto'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { leerProductosAPI } from '../../helpers/queries'
 
 const Administrador = () => {
+  const [listaProductos, setListaProductos] = useState([])
+
+  useEffect(() => {
+    traerProductos()
+  }, [])
+  
+  const traerProductos = async() => {
+    try {
+      await leerProductosAPI()
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <main className='mainPage'>
       <Container>

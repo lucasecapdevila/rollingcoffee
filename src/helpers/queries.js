@@ -8,7 +8,7 @@ export const leerProductosAPI = async() => {
     console.log(respuesta);
     const listaProductos = await respuesta.json()
     console.log(listaProductos);
-    return listaProductos
+    return listaProductos;
 
   } catch (error) {
     console.log(error);
