@@ -10,8 +10,8 @@ const CardProducto = () => {
           <CardImg className='img-fluid' src={producto} alt='café con leche' />
         </CardHeader>
         <CardBody>
-          <CardTitle>Café</CardTitle>
-          <CardText>Descripción: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime nostrum sint ex praesentium voluptates itaque.</CardText>
+          <CardTitle>Café con leche</CardTitle>
+          <CardText>El café con leche es una popular bebida caliente que combina café y leche en proporciones variables según los gustos individuales. Se prepara tradicionalmente vertiendo café recién hecho en una taza y luego agregando leche caliente, creando así una mezcla equilibrada de sabor y textura.</CardText>
           <CardText><b>Precio: $250</b></CardText>
         </CardBody>
         <CardFooter className='d-flex flex-column'>

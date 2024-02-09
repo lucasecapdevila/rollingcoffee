@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import BarraNavegacion from './components/common/BarraNavegacion'
 import Footer from './components/common/Footer'
 import Administrador from './components/pages/Administrador'
 import Error404 from './components/pages/Error404'
 import Inicio from './components/pages/Inicio'
-import DetalleProducto from './components/pages/producto/DetalleProducto'
+import DetalleProducto from './components/pages/DetalleProducto'
 import FormularioProducto from './components/pages/producto/FormularioProducto'
 
 function App() {
