@@ -22,5 +22,5 @@ También se agregará el uso de JSON Server que simulará el uso de una base de 
 ## Uso ✍️
 Para ver el ejercicio en el navegador, ejecutar el comando `npm run dev`.
 
-## Autor 👦
+## Autor 👷‍♂️
 - Capdevila Lucas
