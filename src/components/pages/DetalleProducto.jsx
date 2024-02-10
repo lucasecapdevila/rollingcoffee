@@ -1,7 +1,6 @@
 import producto from '../../assets/coffee-producto.jpg'
 import { Card, CardBody, CardImg, CardText, CardTitle, Col, Container, Row } from "react-bootstrap"
 
-
 const DetalleProducto = () => {
   return (
     <Container className="my-2 mainPage">
