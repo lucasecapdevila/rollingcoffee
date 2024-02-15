@@ -1,6 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form"
 import { crearProductosAPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
 
 const FormularioProducto = () => {
@@ -16,10 +17,18 @@ const FormularioProducto = () => {
     const respuesta = await crearProductosAPI(producto);
     if(respuesta.status === 201){
       //  Mensaje para el usuario con SweetAlert
-      console.log('Producto creado !');
+      Swal.fire({
+        title: "Producto creado",
+        text: `El producto: ${producto.nombreProducto} fue creado exitosamente.`,
+        icon: "success"
+      });
       reset();
     } else{
-      console.log('Ocurrió un error');
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente crear el producto en unos minutos.",
+        icon: "error"
+      });
     }
   }
 
@@ -100,8 +109,8 @@ const FormularioProducto = () => {
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
         </Form.Group>

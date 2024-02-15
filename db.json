@@ -27,6 +27,15 @@
       "categoria": "dulce",
       "descripcionBreve": "Deliciosas facturas",
       "descripcionAmplia": "Un remolino de sabor hecho facturas."
+    },
+    {
+      "id": "8b53",
+      "nombreProducto": "Medialuna",
+      "precio": 250,
+      "imagen": "https://alicante.com.ar/wp-content/uploads/2023/12/2663_receta.jpg",
+      "categoria": "dulce",
+      "descripcionBreve": "Deliciosa medialuna",
+      "descripcionAmplia": "Medialuna riquísima, no te imaginas. Una belleza"
     }
   ],
   "usuarios": [
