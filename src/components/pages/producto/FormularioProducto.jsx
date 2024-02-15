@@ -1,12 +1,26 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form"
+import { crearProductosAPI } from "../../../helpers/queries";
 
 
 const FormularioProducto = () => {
-  const {register, handleSubmit, formState: { errors }} = useForm()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm()
 
-  const productoValidado = (producto) => {
+  const productoValidado = async(producto) => {
     console.log(producto);
+    const respuesta = await crearProductosAPI(producto);
+    if(respuesta.status === 201){
+      //  Mensaje para el usuario con SweetAlert
+      console.log('Producto creado !');
+      reset();
+    } else{
+      console.log('Ocurrió un error');
+    }
   }
 
   return (

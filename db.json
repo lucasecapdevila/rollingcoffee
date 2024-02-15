@@ -9,6 +9,24 @@
       "imagen": "https://images.unsplash.com/photo-1518057111178-44a106bad636?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "disponibilidad": true,
       "id": "1"
+    },
+    {
+      "id": "f1c0",
+      "nombreProducto": "Té ",
+      "precio": 400,
+      "imagen": "https://static.tuasaude.com/media/article/yp/dt/beneficios-del-te-verde_17350_l.jpg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "ksajdfbkajsdbfkjasbdf",
+      "descripcionAmplia": "aksjdfbkñajsdbfñksajdbfkjsbdfkjsbdkfjbaskdcjbakjbd"
+    },
+    {
+      "id": "90ce",
+      "nombreProducto": "Docena de facturas",
+      "precio": 1000,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/VariedadDeFacturas2.jpg/800px-VariedadDeFacturas2.jpg",
+      "categoria": "dulce",
+      "descripcionBreve": "Deliciosas facturas",
+      "descripcionAmplia": "Un remolino de sabor hecho facturas."
     }
   ],
   "usuarios": [
