@@ -31,11 +31,10 @@ const FormularioProducto = () => {
                   message: 'Debe ingresar como máximo 50 carácteres para el nombre del producto.'
                 }
               })
-            }
-          />
+            }/>
           <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
-          
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Precio<span className="text-danger">*</span></Form.Label>
           <Form.Control
@@ -46,18 +45,18 @@ const FormularioProducto = () => {
                 required: 'El precio del producto es obligatorio.',
                 valueAsNumber: true,
                 min:{
-                  value: 10,
+                  value: 50,
                   message: 'Debe ingresar un valor superior a 10.'
                 },
                 max:{
-                  value: 5000,
+                  value: 10000,
                   message: 'Debe ingresar un valor inferior a 5000.'
                 }
               })
-            }
-          />
+            }/>
           <Form.Text className="text-danger">{errors.precio?.message}</Form.Text>
         </Form.Group>
+        
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Imagen URL<span className="text-danger">*</span></Form.Label>
           <Form.Control
@@ -68,23 +67,31 @@ const FormularioProducto = () => {
                 required:'La URL de la imagen del producto es obligatoria.',
                 pattern:{
                   value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/,
-                  message: 'La URL ingresada debe ser una imagen.'
+                  message: 'La URL ingresada debe ser una imagen de formato .jpg, .png o .gif.'
                 }
               })
-            }
-          />
+            }/>
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         </Form.Group>
+        
         <Form.Group className="mb-3" controlId="formCategoria">
           <Form.Label>Categoría<span className="text-danger">*</span></Form.Label>
-          <Form.Select required>
+          <Form.Select 
+            {
+              ...register("categoria",{
+                required:'La categoría del producto es obligatoria.'
+              })
+            }
+          >
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
             <option value="dulce">Dulce</option>
             <option value="salado">Salado</option>
           </Form.Select>
+          <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formDescripcionBreve">
           <Form.Label>Descripción breve<span className="text-danger">*</span></Form.Label>
           <Form.Control
@@ -99,8 +106,8 @@ const FormularioProducto = () => {
                   message: 'Debe ingresar como mínimo 10 carácteres para la descripción del producto.'
                 },
                 maxLength:{
-                  value: 100,
-                  message: 'Debe ingresar como máximo 100 carácteres para la descripción del producto.'
+                  value: 80,
+                  message: 'Debe ingresar como máximo 80 carácteres para la descripción del producto.'
                 }
               })
             }
@@ -121,12 +128,11 @@ const FormularioProducto = () => {
                   message: 'Debe ingresar como mínimo 20 carácteres para la descripción del producto.'
                 },
                 maxLength:{
-                  value: 1000,
-                  message: 'Debe ingresar como máximo 1000 carácteres para la descripción del producto.'
+                  value: 500,
+                  message: 'Debe ingresar como máximo 500 carácteres para la descripción del producto.'
                 }
               })
-            }
-          />
+            }/>
           <Form.Text className="text-danger">{errors.descripcionAmplia?.message}</Form.Text>
         </Form.Group>
         
