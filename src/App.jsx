@@ -5,6 +5,7 @@ import Footer from './components/common/Footer'
 import Administrador from './components/pages/Administrador'
 import Error404 from './components/pages/Error404'
 import Inicio from './components/pages/Inicio'
+import Login from './components/pages/login'
 import DetalleProducto from './components/pages/DetalleProducto'
 import FormularioProducto from './components/pages/producto/FormularioProducto'
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/admin/crear' element={<FormularioProducto></FormularioProducto>} />
         <Route exact path='/admin/editar' element={<Administrador></Administrador>} />
         <Route exact path='/detalle' element={<DetalleProducto></DetalleProducto>} />
+        <Route exact path='/login' element={<Login></Login>} />
         <Route path='*' element={<Error404></Error404>} />
       </Routes>
       <Footer />
