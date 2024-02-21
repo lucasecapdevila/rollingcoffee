@@ -4,7 +4,7 @@ import { crearProductosAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
 
-const FormularioProducto = () => {
+const FormularioProducto = ({editar, titulo}) => {
   const {
     register,
     handleSubmit,
@@ -13,30 +13,36 @@ const FormularioProducto = () => {
   } = useForm()
 
   const productoValidado = async(producto) => {
-    console.log(producto);
-    const respuesta = await crearProductosAPI(producto);
-    if(respuesta.status === 201){
-      //  Mensaje para el usuario con SweetAlert
-      Swal.fire({
-        title: "Producto creado",
-        text: `El producto: ${producto.nombreProducto} fue creado exitosamente.`,
-        icon: "success"
-      });
-      reset();
+    if(editar){
+      //  Lógica del Submit para editar un producto con la API
     } else{
-      Swal.fire({
-        title: "Ocurrió un error",
-        text: "Intente crear el producto en unos minutos.",
-        icon: "error"
-      });
+      console.log(producto);
+      //  Lógica de CREAR PRODUCTO
+      const respuesta = await crearProductosAPI(producto);
+      if(respuesta.status === 201){
+        //  Mensaje para el usuario con SweetAlert
+        Swal.fire({
+          title: "Producto creado",
+          text: `El producto: ${producto.nombreProducto} fue creado exitosamente.`,
+          icon: "success"
+        });
+        reset();
+      } else{
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: "Intente crear el producto en unos minutos.",
+          icon: "error"
+        });
+      }
     }
+    
   }
 
   return (
     <section className="container mainPage">
-      <h1 className="display-4 mt-5">Nuevo producto</h1>
+      <h1 className="display-4 mt-5">{titulo}</h1>
       <hr />
-      <Form onSubmit={handleSubmit(productoValidado)} className="my-4" >
+      <Form className="my-4" onSubmit={handleSubmit(productoValidado)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">
           <Form.Label>Producto<span className="text-danger">*</span></Form.Label>
           <Form.Control
