@@ -1,25 +1,6 @@
 {
   "productos": [
     {
-      "nombreProducto": "Café con leche",
-      "precio": 1000,
-      "categoria": "Infusiones",
-      "descripciónBreve": "Café riquísimo",
-      "descripciónAmplia": "Bebida de café concentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-      "imagen": "https://images.unsplash.com/photo-1518057111178-44a106bad636?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "disponibilidad": true,
-      "id": "1"
-    },
-    {
-      "id": "f1c0",
-      "nombreProducto": "Té ",
-      "precio": 400,
-      "imagen": "https://static.tuasaude.com/media/article/yp/dt/beneficios-del-te-verde_17350_l.jpg",
-      "categoria": "Infusiones",
-      "descripcionBreve": "ksajdfbkajsdbfkjasbdf",
-      "descripcionAmplia": "aksjdfbkñajsdbfñksajdbfkjsbdfkjsbdkfjbaskdcjbakjbd"
-    },
-    {
       "id": "8b53",
       "nombreProducto": "Medialuna",
       "precio": 250,
@@ -27,6 +8,33 @@
       "categoria": "dulce",
       "descripcionBreve": "Deliciosa medialuna",
       "descripcionAmplia": "Medialuna riquísima, no te imaginas. Una belleza"
+    },
+    {
+      "id": "964b",
+      "nombreProducto": "Café",
+      "precio": 1200,
+      "imagen": "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Café zarpado en rico",
+      "descripcionAmplia": "Café riquísimo que te ayudará arrancar el día como un campeón."
+    },
+    {
+      "id": "e2a1",
+      "nombreProducto": "Brownie",
+      "precio": 780,
+      "imagen": "https://images.pexels.com/photos/3666/chocolate-dessert-brownies-cake.jpg",
+      "categoria": "Dulce",
+      "descripcionBreve": "Brownie demente",
+      "descripcionAmplia": "Un postre dulce ideal para acompañar nuestro café"
+    },
+    {
+      "id": "ee20",
+      "nombreProducto": "Te verde",
+      "precio": 700,
+      "imagen": "https://img.freepik.com/foto-gratis/placa-madera-hoja-objeto-alimentacion-saludable_1172-451.jpg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Una bebida de origen Chino",
+      "descripcionAmplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular."
     }
   ],
   "usuarios": [

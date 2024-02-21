@@ -2,10 +2,10 @@ import { Button } from 'react-bootstrap'
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Swal from 'sweetalert2'
-import { borrarProductosAPI } from '../../../helpers/queries'
+import { borrarProductosAPI, leerProductosAPI } from '../../../helpers/queries'
 
 
-const ItemProducto = ({producto}) => {
+const ItemProducto = ({producto, setListaProductos}) => {
   const borrarProducto = () => {
     Swal.fire({
       title: "¿Estás seguro de eliminar el producto?",
@@ -20,17 +20,19 @@ const ItemProducto = ({producto}) => {
       if (result.isConfirmed) {
         const respuesta = await borrarProductosAPI(producto.id)
         if(respuesta.status === 200){
+          //  Actualizo la tabla
+          const productosActualizados = await leerProductosAPI()
+          setListaProductos(productosActualizados)
+          
           Swal.fire({
             title: "Eliminado!",
             text: `El producto "${producto.nombreProducto}" se eliminó exitosamente.`,
             icon: "success"
           });
-          
-          //  Hay que actualizar la tabla
         } else{
           Swal.fire({
             title: "Ocurrió un error",
-            text: "No se pudo eliminar el producto.",
+            text: `No se pudo eliminar el producto ${producto.nombreProducto}. Vuelva a intentarlo en unos momentos.`,
             icon: "error"
           });
         }
