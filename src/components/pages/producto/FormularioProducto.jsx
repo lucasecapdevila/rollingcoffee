@@ -1,7 +1,9 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form"
-import { crearProductosAPI } from "../../../helpers/queries";
+import { crearProductosAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 
 const FormularioProducto = ({editar, titulo}) => {
@@ -9,14 +11,43 @@ const FormularioProducto = ({editar, titulo}) => {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors }
   } = useForm()
+
+  const {id} = useParams()
+
+  useEffect(()=>{
+    //  Solo si estoy editando
+    if(editar){
+      cargarDatosFormulario()
+    }
+  }, [])
+
+  const cargarDatosFormulario = async () => {
+    const respuesta = await obtenerProductoAPI(id)
+    if(respuesta.status === 200){
+      const productoBuscado = await respuesta.json()
+      //  Cargar los datos del productoBuscado en el formulario
+      setValue('nombreProducto', productoBuscado.nombreProducto)
+      setValue('precio', productoBuscado.precio)
+      setValue('categoria', productoBuscado.categoria)
+      setValue('descripcionBreve', productoBuscado.descripcionBreve)
+      setValue('descripcionAmplia', productoBuscado.descripcionAmplia)
+      setValue('imagen', productoBuscado.imagen)
+    } else{
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
+        icon: "error"
+      });
+    }
+  }
 
   const productoValidado = async(producto) => {
     if(editar){
       //  Lógica del Submit para editar un producto con la API
     } else{
-      console.log(producto);
       //  Lógica de CREAR PRODUCTO
       const respuesta = await crearProductosAPI(producto);
       if(respuesta.status === 201){
