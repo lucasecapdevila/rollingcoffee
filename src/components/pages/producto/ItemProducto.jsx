@@ -3,6 +3,7 @@ import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Swal from 'sweetalert2'
 import { borrarProductosAPI, leerProductosAPI } from '../../../helpers/queries'
+import { Link } from 'react-router-dom'
 
 
 const ItemProducto = ({producto, setListaProductos}) => {
@@ -49,7 +50,7 @@ const ItemProducto = ({producto, setListaProductos}) => {
       <td>{producto.categoria}</td>
       <td>
         <div className='d-flex align-items-center justify-content-center'>
-          <Button variant='warning' className='me-2'><FontAwesomeIcon icon={faPenToSquare} /></Button>
+          <Link className='btn btn-warning me-2' to={`/admin/editar/${producto.id}`}><FontAwesomeIcon icon={faPenToSquare} /></Link>
           <Button variant='danger' onClick={borrarProducto}><FontAwesomeIcon icon={faTrashCan} /></Button>
         </div>
       </td>
