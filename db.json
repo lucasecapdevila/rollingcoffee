@@ -1,13 +1,13 @@
 {
   "productos": [
     {
-      "id": "8b53",
       "nombreProducto": "Medialuna",
-      "precio": 250,
+      "precio": 600,
       "imagen": "https://alicante.com.ar/wp-content/uploads/2023/12/2663_receta.jpg",
-      "categoria": "dulce",
+      "categoria": "Dulce",
       "descripcionBreve": "Deliciosa medialuna",
-      "descripcionAmplia": "Medialuna riquísima, no te imaginas. Una belleza"
+      "descripcionAmplia": "Medialuna riquísima, no te imaginas. Una belleza",
+      "id": "8b53"
     },
     {
       "id": "964b",
@@ -19,13 +19,13 @@
       "descripcionAmplia": "Café riquísimo que te ayudará arrancar el día como un campeón."
     },
     {
-      "id": "e2a1",
       "nombreProducto": "Brownie",
-      "precio": 780,
+      "precio": 800,
       "imagen": "https://images.pexels.com/photos/3666/chocolate-dessert-brownies-cake.jpg",
       "categoria": "Dulce",
       "descripcionBreve": "Brownie demente",
-      "descripcionAmplia": "Un postre dulce ideal para acompañar nuestro café"
+      "descripcionAmplia": "Un postre dulce ideal para acompañar nuestro café",
+      "id": "e2a1"
     },
     {
       "id": "ee20",
@@ -37,13 +37,13 @@
       "descripcionAmplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular."
     },
     {
-      "id": "374d",
       "nombreProducto": "Mini Torta Chocolate",
-      "precio": 1499,
+      "precio": 2000,
       "imagen": "https://www.estherhelados.com.ar/webfiles/estherhelados/productos/133/1_1000x1000.jpg",
       "categoria": "Dulce",
       "descripcionBreve": "Mini Torta Chocolate y Nuez",
-      "descripcionAmplia": "Brownie, helado de chocolate c/nuez , pionono, dulce de leche repostero y ganache de chocolate."
+      "descripcionAmplia": "Brownie, helado de chocolate c/nuez , pionono, dulce de leche repostero y ganache de chocolate.",
+      "id": "374d"
     }
   ],
   "usuarios": [

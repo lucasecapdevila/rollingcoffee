@@ -45,7 +45,7 @@ const ItemProducto = ({producto, setListaProductos}) => {
     <tr>
       <td>{producto.id}</td>
       <td>{producto.nombreProducto}</td>
-      <td>{producto.precio}</td>
+      <td>${producto.precio}</td>
       <td className='w-25'><img src={producto.imagen} className='img-fluid' /></td>
       <td>{producto.categoria}</td>
       <td>

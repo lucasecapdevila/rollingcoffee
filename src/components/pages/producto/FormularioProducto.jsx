@@ -1,9 +1,9 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form"
-import { crearProductosAPI, obtenerProductoAPI } from "../../../helpers/queries";
+import { crearProductosAPI, editarProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 const FormularioProducto = ({editar, titulo}) => {
@@ -15,7 +15,9 @@ const FormularioProducto = ({editar, titulo}) => {
     formState: { errors }
   } = useForm()
 
+  //  Variables que traigo de react-router
   const {id} = useParams()
+  const navegacion = useNavigate()
 
   useEffect(()=>{
     //  Solo si estoy editando
@@ -45,28 +47,48 @@ const FormularioProducto = ({editar, titulo}) => {
   }
 
   const productoValidado = async(producto) => {
-    if(editar){
-      //  Lógica del Submit para editar un producto con la API
-    } else{
-      //  Lógica de CREAR PRODUCTO
-      const respuesta = await crearProductosAPI(producto);
-      if(respuesta.status === 201){
-        //  Mensaje para el usuario con SweetAlert
-        Swal.fire({
-          title: "Producto creado",
-          text: `El producto: ${producto.nombreProducto} fue creado exitosamente.`,
-          icon: "success"
-        });
-        reset();
+    try {
+      if(editar){
+        //  Lógica del Submit para editar un producto con la API
+        const respuesta = await editarProductoAPI(id, producto)
+        if(respuesta.status === 200){
+          Swal.fire({
+            title: "Producto editado",
+            text: `El producto: ${producto.nombreProducto} fue modificado exitosamente.`,
+            icon: "success"
+          });
+          //  Redireccionar a tabla de Administrador una vez terminada la edición
+          navegacion('/admin')
+  
+        } else{
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar el producto en unos minutos.",
+            icon: "error"
+          });
+        }
       } else{
-        Swal.fire({
-          title: "Ocurrió un error",
-          text: "Intente crear el producto en unos minutos.",
-          icon: "error"
-        });
+        //  Lógica de CREAR PRODUCTO
+        const respuesta = await crearProductosAPI(producto);
+        if(respuesta.status === 201){
+          //  Mensaje para el usuario con SweetAlert
+          Swal.fire({
+            title: "Producto creado",
+            text: `El producto: ${producto.nombreProducto} fue creado exitosamente.`,
+            icon: "success"
+          });
+          reset();
+        } else{
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente crear el producto en unos minutos.",
+            icon: "error"
+          });
+        }
       }
+    } catch (error) {
+      console.log(error);
     }
-    
   }
 
   return (

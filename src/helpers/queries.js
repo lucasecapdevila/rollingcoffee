@@ -56,3 +56,19 @@ export const borrarProductosAPI = async(id) => {
     console.log(error);
   }
 }
+
+//  Solicitud tipo PUT (editar)
+export const editarProductoAPI = async(id, producto) => {
+  try {
+    const respuesta = await fetch(`${URI_PRODUCTOS}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(producto)
+    })
+    return respuesta
+  } catch (error) {
+    console.log(error);
+  }
+}
