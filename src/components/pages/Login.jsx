@@ -31,8 +31,19 @@ const Login = () => {
                   name="correo"
                   placeholder="ejemplo@mail.com"
                   {...register("correo", {
-                    required: "El correo es obligatorio."
-                  })}
+                    required: "El correo es obligatorio.",
+                  minLength: {
+                    value: 4,
+                    message: "El email debe contener al menos 4 caracteres",
+                  },
+                  maxLength: {
+                    value: 250,
+                    message: "El email debe contener como máximo 250 caracteres",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                    message: "Ingrese una dirección de correo electrónico válida",
+                  },})}
                 />
                 <FormText className='text-danger'>{errors.correo?.message}</FormText>
               </Form.Group>
@@ -44,8 +55,16 @@ const Login = () => {
                   name='password'
                   placeholder="Ingrese su contraseña"
                   {...register("password", {
-                    required: "La contraseña es obligatoria."
-                  })}
+                    required: "La contraseña es obligatoria.",
+                    minLength: { value: 8, message: "el minimo es de 8 caracteres" },
+                    maxLength: {
+                      value: 12,
+                      message: "el maximo es de 15 caracteres",
+                    },
+                    pattern: {
+                      value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                      message: "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
+                  },})}
                 />
                 <FormText className='text-danger'>{errors.password?.message}</FormText>
               </Form.Group>
