@@ -1,20 +1,29 @@
 import { Card, CardBody, CardImg, CardText, CardTitle, Col, Container, Row } from "react-bootstrap"
 import { obtenerProductoAPI } from '../../helpers/queries'
 import { useParams } from 'react-router'
+import { useEffect } from "react"
 
 const DetalleProducto = () => {
+  useEffect(() => {
+    cargarDatosDelProducto()
+  }, [])
+
   //  Variables que traigo de react-router
   const {id} = useParams()
 
-  const cargarDatosProducto = async() => {
+  const cargarDatosDelProducto = async() => {
     const respuesta = await obtenerProductoAPI(id)
     if(respuesta.status === 200){
-      const productoBuscado = await respuesta.json()
-      console.log(productoBuscado);
-    };
-    return respuesta
+      const datosProducto = await respuesta.json()
+      return datosProducto
+    } else{
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
+        icon: "error"
+      });
+    }
   }
-  cargarDatosProducto()
 
   return (
     <Container className="my-2 mainPage">
