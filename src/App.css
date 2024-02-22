@@ -38,6 +38,12 @@
   }
 }
 
+.card-img-top-nueva {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
 /* Borro las flechas en input tipo number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

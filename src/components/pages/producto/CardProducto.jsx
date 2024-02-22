@@ -6,12 +6,12 @@ const CardProducto = ({producto}) => {
     <Col xs={12} sm={6} md={4} className='my-2'>
       <Card className='px-0'>
         <CardHeader className='p-0'>
-          <CardImg className='img-fluid' src={producto.imagen} alt={producto.nombreProducto} />
+          <CardImg className='card-img-top-nueva' src={producto.imagen} alt={producto.nombreProducto} />
         </CardHeader>
         <CardBody>
           <CardTitle>{producto.nombreProducto}</CardTitle>
           <CardText>
-            {producto.descripciónAmplia}
+            {producto.descripcionBreve}
             <br />
             <b>${producto.precio}</b>
           </CardText>
