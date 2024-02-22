@@ -80,6 +80,11 @@ const admin = {
   password: "Rolling576"
 }
 
-export const login = () => {
-
+export const login = (usuario) => {
+  if(usuario.email === admin.email && usuario.password === admin.password){
+    sessionStorage.setItem('inicioRollingCoffee', JSON.stringify(usuario.email))
+    return true
+  } else{
+    return false
+  }
 }

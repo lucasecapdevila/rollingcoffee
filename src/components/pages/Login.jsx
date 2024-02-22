@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { Button, Card, CardBody, CardHeader, Container, Form, FormText } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
+import { login } from '../../helpers/queries'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navegacion = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -11,8 +16,25 @@ const Login = () => {
 
   //  Funciones
   
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (usuario) => {
+    console.log(usuario);
+    if(login(usuario)){
+      //  Usuario logueado
+      Swal.fire({
+        title: "Usuario logueado",
+        text: `El usuario ${usuario.email} fue ingresado correctamente.`,
+        icon: "success",
+      });
+      //  Redireccionar a página de Administrador
+      navegacion('/admin')
+    } else{
+      //  El usuario no fue logueado
+      Swal.fire({
+        title: "Error en el login",
+        text: "El correo o contraseña son incorrectos",
+        icon: "error",
+      });
+    }
   }
 
   return (
@@ -24,14 +46,14 @@ const Login = () => {
           </CardHeader>
           <CardBody>
             <Form onSubmit={handleSubmit(onSubmit)}>
-              <Form.Group className="mb-3" controlId="correo">
+              <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control 
                   type="email"
-                  name="correo"
+                  name="email"
                   placeholder="ejemplo@mail.com"
-                  {...register("correo", {
-                    required: "El correo es obligatorio.",
+                  {...register("email", {
+                    required: "El email es obligatorio.",
                   minLength: {
                     value: 4,
                     message: "El email debe contener al menos 4 caracteres",
@@ -45,7 +67,7 @@ const Login = () => {
                     message: "Ingrese una dirección de correo electrónico válida",
                   },})}
                 />
-                <FormText className='text-danger'>{errors.correo?.message}</FormText>
+                <FormText className='text-danger'>{errors.email?.message}</FormText>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="password">
