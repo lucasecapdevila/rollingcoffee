@@ -1,9 +1,11 @@
 import { Card, CardBody, CardImg, CardText, CardTitle, Col, Container, Row } from "react-bootstrap"
 import { obtenerProductoAPI } from '../../helpers/queries'
 import { useParams } from 'react-router'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const DetalleProducto = () => {
+  const [producto, setProducto] = useState({})
+
   useEffect(() => {
     cargarDatosDelProducto()
   }, [])
@@ -15,7 +17,7 @@ const DetalleProducto = () => {
     const respuesta = await obtenerProductoAPI(id)
     if(respuesta.status === 200){
       const datosProducto = await respuesta.json()
-      return datosProducto
+      setProducto(datosProducto)
     } else{
       Swal.fire({
         title: "Ocurrió un error",
