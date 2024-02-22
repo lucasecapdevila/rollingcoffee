@@ -32,19 +32,23 @@ const DetalleProducto = () => {
       <Card>
         <Row>
           <Col md={6}>
-            <CardImg src='https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg' />
+            <CardImg
+              variant="top"
+              src={producto.imagen}
+              alt={producto.nombreProducto}
+            />
           </Col>
           <Col md={6}>
             <CardBody>
-              <CardTitle>Café con leche</CardTitle>
+              <CardTitle>{producto.nombreProducto}</CardTitle>
               <hr />
               <CardText>
-                El café con leche es una popular bebida caliente que combina café y leche en proporciones variables según los gustos individuales. Se prepara tradicionalmente vertiendo café recién hecho en una taza y luego agregando leche caliente, creando así una mezcla equilibrada de sabor y textura.
+              {producto.descripcionAmplia}
                 <br />
                 <br />
-                <span className='fw-bold text-green'>Categoría: </span>Infusiones
+                <span className='fw-bold text-green'>Categoría: </span>{producto.categoria}
                 <br className='mb-3' />
-                <span className='fw-bold text-green'>Precio: </span>$1.000
+                <span className='fw-bold text-green'>Precio: </span>${producto.precio}
               </CardText>
             </CardBody>
           </Col>
