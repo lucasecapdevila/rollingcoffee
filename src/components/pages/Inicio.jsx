@@ -2,7 +2,7 @@ import { Container, Row } from 'react-bootstrap'
 import cafeteria from '../../assets/coffee-shop.jpg'
 import CardProducto from './producto/CardProducto'
 import { useEffect, useState } from 'react'
-import { leerProductosAPI } from '../../helpers/queries'
+import { leerProductosAPI, obtenerProductoAPI } from '../../helpers/queries'
 
 const Inicio = () => {
   const [listaProductos, setListaProductos] = useState([])

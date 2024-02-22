@@ -6,7 +6,7 @@ const CardProducto = ({producto}) => {
     <Col xs={12} sm={6} md={4} className='my-2'>
       <Card className='px-0'>
         <CardHeader className='p-0'>
-          <CardImg className='img-fluid' src={producto.imagen} alt='café con leche' />
+          <CardImg className='img-fluid' src={producto.imagen} alt={producto.nombreProducto} />
         </CardHeader>
         <CardBody>
           <CardTitle>{producto.nombreProducto}</CardTitle>
@@ -17,7 +17,7 @@ const CardProducto = ({producto}) => {
           </CardText>
         </CardBody>
         <CardFooter className='d-flex flex-column'>
-          <Link to='/detalle' className='btn btn-success align-self-end'>Ver más</Link>
+          <Link to= {`/detalleProducto/${producto.id}`} className='btn btn-success align-self-end'>Ver más</Link>
         </CardFooter>
       </Card>
     </Col>

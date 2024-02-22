@@ -1,13 +1,27 @@
-import producto from '../../assets/coffee-producto.jpg'
 import { Card, CardBody, CardImg, CardText, CardTitle, Col, Container, Row } from "react-bootstrap"
+import { obtenerProductoAPI } from '../../helpers/queries'
+import { useParams } from 'react-router'
 
 const DetalleProducto = () => {
+  //  Variables que traigo de react-router
+  const {id} = useParams()
+
+  const cargarDatosProducto = async() => {
+    const respuesta = await obtenerProductoAPI(id)
+    if(respuesta.status === 200){
+      const productoBuscado = await respuesta.json()
+      console.log(productoBuscado);
+    };
+    return respuesta
+  }
+  cargarDatosProducto()
+
   return (
     <Container className="my-2 mainPage">
       <Card>
         <Row>
           <Col md={6}>
-            <CardImg src={producto} />
+            <CardImg src='https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg' />
           </Col>
           <Col md={6}>
             <CardBody>
