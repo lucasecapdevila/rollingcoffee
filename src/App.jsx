@@ -7,7 +7,6 @@ import Error404 from './components/pages/Error404'
 import Inicio from './components/pages/Inicio'
 import Login from './components/pages/login'
 import DetalleProducto from './components/pages/DetalleProducto'
-import FormularioProducto from './components/pages/producto/FormularioProducto'
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       <BarraNavegacion />
       <Routes>
         <Route exact path='/' element={<Inicio></Inicio>} />
-        
+        <Route exact path='/admin/*' element={<Administrador></Administrador>} />
         
         
         <Route exact path='/detalleProducto/:id' element={<DetalleProducto></DetalleProducto>} />

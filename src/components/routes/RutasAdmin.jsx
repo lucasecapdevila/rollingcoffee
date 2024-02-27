@@ -6,9 +6,9 @@ const RutasAdmin = () => {
   return (
     <>
       <Routes>
-        <Route exact path='/admin' element={<Administrador></Administrador>} />
-        <Route exact path='/admin/crear' element={<FormularioProducto editar={false} titulo='Nuevo producto'></FormularioProducto>} />
-        <Route exact path='/admin/editar/:id' element={<FormularioProducto editar={true} titulo='Editar producto'></FormularioProducto>} />
+        <Route exact path='/' element={<Administrador></Administrador>} />
+        <Route exact path='/crear' element={<FormularioProducto editar={false} titulo='Nuevo producto'></FormularioProducto>} />
+        <Route exact path='/editar/:id' element={<FormularioProducto editar={true} titulo='Editar producto'></FormularioProducto>} />
       </Routes>
     </>
   )
