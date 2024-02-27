@@ -8,11 +8,16 @@ import Login from "./components/pages/login";
 import DetalleProducto from "./components/pages/DetalleProducto";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
+import { useState } from "react";
 
 function App() {
+  const user = JSON.parse(sessionStorage.getItem('inicioRollingCoffee')) || ''
+
+  const [loggedUser, setLoggedUser] = useState(user)
+
   return (
     <BrowserRouter>
-      <BarraNavegacion />
+      <BarraNavegacion loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>} />
         <Route
@@ -29,7 +34,7 @@ function App() {
           path="/detalleProducto/:id"
           element={<DetalleProducto></DetalleProducto>}
         />
-        <Route exact path="/login" element={<Login></Login>} />
+        <Route exact path="/login" element={<Login setLoggedUser={setLoggedUser}></Login>} />
         <Route path="*" element={<Error404></Error404>} />
       </Routes>
       <Footer />

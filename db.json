@@ -19,15 +19,6 @@
       "descripcionAmplia": "Café riquísimo que te ayudará arrancar el día como un campeón."
     },
     {
-      "nombreProducto": "Brownie",
-      "precio": 800,
-      "imagen": "https://images.pexels.com/photos/3666/chocolate-dessert-brownies-cake.jpg",
-      "categoria": "Dulce",
-      "descripcionBreve": "Brownie demente",
-      "descripcionAmplia": "Un postre dulce ideal para acompañar nuestro café",
-      "id": "e2a1"
-    },
-    {
       "id": "ee20",
       "nombreProducto": "Te verde",
       "precio": 700,
