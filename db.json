@@ -1,7 +1,7 @@
 {
   "productos": [
     {
-      "nombreProducto": "Medialuna",
+      "nombreProducto": "Medialuna sarpada",
       "precio": 600,
       "imagen": "https://alicante.com.ar/wp-content/uploads/2023/12/2663_receta.jpg",
       "categoria": "Dulce",
@@ -49,7 +49,8 @@
   "usuarios": [
     {
       "email": "prueba@mail.com",
-      "password": "123"
+      "password": "123",
+      "id": "ecac"
     }
   ]
 }
