@@ -19,7 +19,7 @@ const ItemProducto = ({producto, setListaProductos}) => {
       cancelButtonText: "Cancelar"
     }).then(async(result) => {
       if (result.isConfirmed) {
-        const respuesta = await borrarProductosAPI(producto.id)
+        const respuesta = await borrarProductosAPI(producto._id)
         if(respuesta.status === 200){
           //  Actualizo la tabla
           const productosActualizados = await leerProductosAPI()
@@ -43,14 +43,13 @@ const ItemProducto = ({producto, setListaProductos}) => {
 
   return (
     <tr>
-      <td>{producto.id}</td>
       <td>{producto.nombreProducto}</td>
       <td>${producto.precio}</td>
       <td className='w-25'><img src={producto.imagen} className='img-fluid' /></td>
       <td>{producto.categoria}</td>
       <td>
         <div className='d-flex align-items-center justify-content-center'>
-          <Link className='btn btn-warning me-2' to={`/admin/editar/${producto.id}`}><FontAwesomeIcon icon={faPenToSquare} /></Link>
+          <Link className='btn btn-warning me-2' to={`/admin/editar/${producto._id}`}><FontAwesomeIcon icon={faPenToSquare} /></Link>
           <Button variant='danger' onClick={borrarProducto}><FontAwesomeIcon icon={faTrashCan} /></Button>
         </div>
       </td>

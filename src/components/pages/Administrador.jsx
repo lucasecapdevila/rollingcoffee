@@ -34,7 +34,6 @@ const Administrador = () => {
         <Table striped bordered responsive>
           <thead>
             <tr>
-              <th>Cod</th>
               <th>Producto</th>
               <th>Precio</th>
               <th>URL de Imagen</th>
@@ -44,7 +43,7 @@ const Administrador = () => {
           </thead>
           <tbody>
             {
-              listaProductos.map((producto) => <ItemProducto key={producto.id} producto={producto} setListaProductos={setListaProductos} />)
+              listaProductos.map((producto) => <ItemProducto key={producto._id} producto={producto} setListaProductos={setListaProductos} />)
             }
           </tbody>
         </Table>
