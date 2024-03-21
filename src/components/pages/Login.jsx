@@ -83,11 +83,11 @@ const Login = ({setLoggedUser}) => {
                     required: "La contraseña es obligatoria.",
                     minLength: { value: 8, message: "el minimo es de 8 caracteres" },
                     maxLength: {
-                      value: 12,
-                      message: "el maximo es de 15 caracteres",
+                      value: 20,
+                      message: "el maximo es de 20 carácteres",
                     },
                     pattern: {
-                      value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                      value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/,
                       message: "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
                   },})}
                 />
